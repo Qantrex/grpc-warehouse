@@ -44,14 +44,15 @@ tasks.register('runServer', JavaExec) {
     description = 'Runs the gRPC server'
     classpath = sourceSets.main.runtimeClasspath
     jvmArgs '--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED'
-    mainClass = 'HelloWorldServer'
+    mainClass = 'WarehouseServer' // Changed from HelloWorldServer
 }
 
 tasks.register('runClient', JavaExec) {
     group = 'application'
     description = 'Runs the gRPC client'
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'HelloWorldClient'
-     args 'Thomas' 
-     args 'Micheler'
+    mainClass = 'WarehouseClient' // Changed from HelloWorldClient
+    // The 'args' are now ignored by WarehouseClient but can be left or removed.
+    args 'Thomas'
+    args 'Micheler'
 }
