@@ -1,4 +1,4 @@
-# Middleware Engineering "DEZSYS_GK_HELLOWORLD_GRPC"
+# Middleware Engineering
 
 ## Aufgabenstellung
 
@@ -10,9 +10,9 @@ Start HelloWorldServer (Java)
 
 Start HelloWorldClient (Java)  
 `gradle runClient`
-  
 
--------------------------------- Python 
+Make virtual Environment
+`python -m venv .`
 
 Add grpcio packages  
 `pip3 install grpcio grpcio-tools`  
@@ -26,4 +26,25 @@ Compile .proto file
 Start HelloWorldClient (Python)  
 `python3 src/main/resources/helloWorldClient.py`  
 
-## Quellen
+## Code Snippets
+Create the Service in the proto file
+``` java
+// Service definition.
+service DataWarehouseService {
+  rpc TransferWarehouseRecord (WarehouseRecord) returns (TransferReply) {}
+}
+```
+Define the Warehouse data in the proto file
+``` java
+// Warehouse data.
+message WarehouseRecord {
+  string warehouseID = 1;
+  string warehouseName = 2;
+  string warehouseAddress = 3;
+  string warehousePostalCode = 4;
+  string warehouseCity = 5;
+  string warehouseCountry = 6;
+  string timestamp = 7;
+  repeated Product products = 8; // 'repeated' creates a list of Products
+}
+```
