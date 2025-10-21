@@ -1,8 +1,4 @@
-# Middleware Engineering
-
-## Aufgabenstellung
-
-## Implementierung
+# Middleware Engineering - Bauer 4BHIT
 
 Start HelloWorldServer (Java)  
 `gradle clean build`  
