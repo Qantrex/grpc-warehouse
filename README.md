@@ -48,3 +48,12 @@ message WarehouseRecord {
   repeated Product products = 8; // 'repeated' creates a list of Products
 }
 ```
+Establishes an unencrypted channel to the server
+``` python
+with grpc.insecure_channel('localhost:50051') as channel
+```
+Imports the gRPC library for networking and datetime
+``` python
+import grpc from datetime import datetime	
+import hello_pb2 import hello_pb2_grpc
+```
