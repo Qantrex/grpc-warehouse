@@ -6,20 +6,19 @@ option java_outer_classname = "DwhProto";
 
 package dwh;
 
-// The new DataWarehouse service definition.
+// Service definition.
 service DataWarehouseService {
-  // Transfers a warehouse record
   rpc TransferWarehouseRecord (WarehouseRecord) returns (TransferReply) {}
 }
 
-// Defines a Product. I've assumed these fields.
+// Defines Product
 message Product {
   string productID = 1;
   string productName = 2;
   int32 quantity = 3;
 }
 
-// The request message containing the warehouse data.
+// Warehouse data.
 message WarehouseRecord {
   string warehouseID = 1;
   string warehouseName = 2;
@@ -31,7 +30,7 @@ message WarehouseRecord {
   repeated Product products = 8; // 'repeated' creates a list of Products
 }
 
-// The response message confirming the transfer
+// Response message
 message TransferReply {
   string message = 1;
   bool success = 2;
