@@ -52,3 +52,37 @@ Imports the gRPC library for networking and datetime
 import grpc from datetime import datetime	
 import hello_pb2 import hello_pb2_grpc
 ```
+
+Transfer Methods
+``` java
+try {
+    TransferReply response = blockingStub.transferWarehouseRecord(request);
+    System.out.println("Server response: " + response.getMessage());
+    System.out.println("Success: " + response.getSuccess());
+} catch (StatusRuntimeException e) {
+    System.err.println("RPC failed: " + e.getStatus());
+}
+```
+``` python
+response = stub.TransferWarehouseRecord(warehouse_request)
+```
+---
+# Fragen
+What is gRPC and why does it work accross languages and platforms?
+A Remote Procedure Call (RPC) from google. Using HTTP/2 and Protocol Buffers to translate between languages.
+https://grpc.io/docs/what-is-grpc/introduction
+Describe the RPC life cycle starting with the RPC client?
+The gRPC client calls a method on its local stub, which serializes the request using Protocol Buffers and sends it over an HTTP/2 connection.
+https://www.baeldung.com/grpc-introduction
+Describe the workflow of Protocol Buffers?
+The Protocol Buffer workflow involves defining the data structure in a .proto file. Later that file can be used for new code creation usign protoc.
+https://grpc.io/docs/what-is-grpc/introduction
+What are the benefits of using protocol buffers?
+You can get smaller message sizes and faster performance compared to text-based formats like JSON or XML.
+https://www.baeldung.com/grpc-introduction
+When is the use of protocol not recommended?
+The use of Protocol Buffers is generally not recommended when human readability is very important
+https://www.baeldung.com/grpc-introduction
+List 3 different data types that can be used with protocol buffers?
+string, int32, and bool
+https://grpc.io/docs/what-is-grpc/introduction
