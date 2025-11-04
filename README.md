@@ -25,7 +25,6 @@ Start HelloWorldClient (Python)
 ## Code Snippets
 Create the Service in the proto file
 ``` java
-// Service definition.
 service DataWarehouseService {
   rpc TransferWarehouseRecord (WarehouseRecord) returns (TransferReply) {}
 }
@@ -41,7 +40,7 @@ message WarehouseRecord {
   string warehouseCity = 5;
   string warehouseCountry = 6;
   string timestamp = 7;
-  repeated Product products = 8; // 'repeated' creates a list of Products
+  repeated Product products = 8;
 }
 ```
 Establishes an unencrypted channel to the server
